@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure Status Portal</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Secure Status Portal</h1>
+    <p>Campus Operations Center</p>
+  </header>
+
+  <!-- Target of MISSION 2 -->
+  <section id="incidents">
+    <h2>Incident Management</h2>
+    <p>Operators use this button to clear the incident queue after an event is resolved.</p>
+
+    <div id="danger-zone">
+      <button id="purge-btn">Purge All Incidents</button>
+    </div>
+
+    <p id="log">No purge requested.</p>
+  </section>
+
+  <!-- Target of MISSION 3 -->
+  <section id="status">
+    <h2>Live Service Status</h2>
+
+    <div class="toolbar">
+      <button id="refresh-btn">Refresh</button>
+      <button id="simulate-error-btn">Simulate outage (HTTP 503)</button>
+      <button id="simulate-garbage-btn">Simulate broken proxy (not JSON)</button>
+    </div>
+
+    <p id="status-msg">Click Refresh to load the status.</p>
+
+    <table id="status-table">
+      <thead>
+        <tr><th>Service</th><th>Status</th><th>Online</th><th>Latency</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <p>Rejected entries: <strong id="rejected-count">-</strong></p>
+    <p>Last updated: <span id="last-updated">never</span></p>
+  </section>
+
+  <!-- Script order matters: see Unit 1.3, "Script Loading and Execution Order" -->
+  <script src="js/validator.js"></script>
+  <script src="js/incidents.js"></script>
+  <script src="js/status.js"></script>
+</body>
+</html>

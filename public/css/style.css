@@ -1,0 +1,35 @@
+body { font-family: Arial, sans-serif; margin: 0; background: #f6f7f9; color: #222; }
+header { background: #006633; color: #fff; padding: 16px 32px; }
+header h1 { margin: 0; }
+header p { margin: 4px 0 0; opacity: 0.85; }
+section { background: #fff; margin: 24px 32px; padding: 16px 24px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.12); }
+
+#danger-zone {
+  position: relative;
+  height: 260px;
+  border: 2px dashed #c62828;
+  border-radius: 8px;
+  background: #fff5f5;
+  overflow: hidden;
+}
+#purge-btn {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  padding: 10px 16px;
+  background: #c62828;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: left 0.15s, top 0.15s;
+}
+
+.toolbar button { margin-right: 8px; padding: 6px 12px; }
+table { border-collapse: collapse; width: 100%; margin-top: 12px; }
+th, td { border: 1px solid #ddd; padding: 6px 10px; text-align: left; }
+th { background: #eef2f0; }
+.status-up { color: #1b5e20; font-weight: bold; }
+.status-degraded { color: #e65100; font-weight: bold; }
+.status-down { color: #b71c1c; font-weight: bold; }
+.error { color: #b71c1c; font-weight: bold; }

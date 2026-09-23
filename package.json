@@ -1,0 +1,15 @@
+{
+  "name": "cyse411-assignment1-secure-status-portal",
+  "version": "1.0.0",
+  "description": "CYSE 411 Assignment 1: Secure Status Portal (Units 1.1, 1.2, 1.3)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test:m1": "node tests/mission1.test.js"
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
