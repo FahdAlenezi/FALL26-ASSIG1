@@ -15,11 +15,51 @@
   const zone = document.getElementById("danger-zone");
   const original = document.getElementById("purge-btn");
 
-  // TODO R1: remove the portal's legitimate click listener.
-  // TODO R2: stop keyboard users from reaching the button.
-  // TODO R3: make the button jump inside zone on every approach, no overlap.
-  // TODO R4: create a NEW element that shows the dodge counter.
-  // TODO R5: your creative twist.
+    const button = original.cloneNode(true);
+  original.replaceWith(button);
+
+  button.tabIndex = -1;
+
+  zone.style.position = "relative";
+  button.style.position = "absolute";
+
+  let count = 0;
+
+  const counter = document.createElement("p");
+  counter.textContent = "Moves: 0";
+  zone.appendChild(counter);
+
+  let oldX = button.offsetLeft;
+  let oldY = button.offsetTop;
+
+  function moveButton() {
+    const maxX = zone.clientWidth - button.offsetWidth;
+    const maxY = zone.clientHeight - button.offsetHeight;
+
+    let x;
+    let y;
+
+    do {
+      x = Math.floor(Math.random() * maxX);
+      y = Math.floor(Math.random() * maxY);
+    } while (
+      Math.abs(x - oldX) < button.offsetWidth &&
+      Math.abs(y - oldY) < button.offsetHeight
+    );
+
+    button.style.left = x + "px";
+    button.style.top = y + "px";
+
+    oldX = x;
+    oldY = y;
+
+    count++;
+    counter.textContent = "Moves: " + count;
+
+    button.textContent = "Try again";
+  }
+
+  button.addEventListener("mouseenter", moveButton);
 
   console.log("[attack] runaway button installed");
 })();
