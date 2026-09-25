@@ -5,6 +5,7 @@
 Output of `git log --oneline`:
 
 ```
+06e2d6f Complete mission 4 report
 1ab6c2c Complete mission 3 cover-up
 52dfc78 Complete mission 2 attack
 6e8dfc2 Complete mission 1 validation
@@ -21,7 +22,7 @@ Pick your **best** commit message and your **worst** one. Which of the 7 rules d
 
 PR link, inside your fork:
 
-> https://github.com/...
+> https://github.com/FahdAlenezi/FALL26-ASSIG1/pull/1
 
 ## Creating value: the risk brief
 
